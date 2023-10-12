@@ -1,4 +1,4 @@
-module MutinyDevel
+module Peppermint
   GEM_NAME = File.basename(__dir__)
-  VERSION = "0.1.3"
+  VERSION = "0.1.4"
 end

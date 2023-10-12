@@ -1,4 +1,4 @@
-module MutinyDevel
+module Peppermint
   class GwenGPT
     def self.lint(subj, body)
       if subj.match?(/[[:punct:]]$/)
@@ -24,7 +24,7 @@ task :gwenGPT do
   gitlog_raw.split("~", -1)
     .each_slice(3) { |row|
     if row.length == 3
-      _, msg = MutinyDevel::GwenGPT.lint(row[1], row[2])
+      _, msg = Peppermint::GwenGPT.lint(row[1], row[2])
       print "%-10s%-40s%-30s\n" % ([row[0], row[1], msg].map { |s| s.strip })
     end
   }
