@@ -1,7 +1,7 @@
 require "rake"
 require "rubocop/rake_task"
 
-module MutinyDevel
+module Peppermint
 end
 
 load File.join __dir__, "shared.rake"
@@ -17,7 +17,7 @@ task deps: :deno_install
 
 desc "install binary symlinks to ~/.local/bin"
 task :install_local do
-  proj_name = MutinyDevel::GEM_NAME
+  proj_name = Peppermint::GEM_NAME
   symlink = File.join ENV["HOME"], ".local/bin/#{proj_name}"
   dir = File.join ENV["HOME"], ".local/bin"
   unless File.exist? symlink

@@ -1,4 +1,4 @@
-# mutiny-devel
+# peppermint
 
 _"A gem of a dev environment."_
 
@@ -8,7 +8,7 @@ _"A gem of a dev environment."_
 
 ```ruby
 group :development do
-  gem "mutiny-devel", git: "http://git.mutiny.network/mutiny/devel/"
+  gem "peppermint", git: "https://github.com/janie314/peppermint"
 end
 ```
 
@@ -21,13 +21,13 @@ bundle
 3. Put one of the following in your `Rakefile` as appropriate.
 
 ```ruby
-require "mutiny-devel/rake/ruby"
+require "peppermint/rake/ruby"
 ```
 
 or
 
 ```ruby
-require "mutiny-devel/rake/rust"
+require "peppermint/rake/rust"
 ```
 
 4. Pull down config files.
@@ -39,7 +39,7 @@ bundle exec rake update_devel_config
 # Update
 
 ```bash
-bundle update mutiny-devel
+bundle update peppermint
 bundle exec rake update_devel_config
 ```
 

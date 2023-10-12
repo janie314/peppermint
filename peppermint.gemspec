@@ -10,13 +10,12 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 Gem::Specification.new do |spec|
   # gem metadata
   spec.name = proj
-  spec.version = MutinyDevel::VERSION
-  spec.authors = ["'12ball'"]
+  spec.version = Peppermint::VERSION
+  spec.authors = ["'j'"]
   spec.email = ["'pub@janie.page'"]
-  spec.summary = "git linter powered by futuristic, hyperintelligent AI." \
-    "Don't worry, we have a powerful built-in singularity stopper."
+  spec.summary = "A Gem of a dev environment"
   spec.description = ""
-  spec.homepage = "http://10.10.10.10/dev/#{proj}"
+  spec.homepage = "https://github.com/janie314/peppermint"
   spec.required_ruby_version = ">= 3.0.0"
   spec.metadata["homepage_uri"] = spec.homepage
 
