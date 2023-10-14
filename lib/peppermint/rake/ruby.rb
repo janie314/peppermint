@@ -17,7 +17,7 @@ task deps: :deno_install
 
 desc "install binary symlinks to ~/.local/bin"
 task :install_local do
-  proj_name = Peppermint::GEM_NAME
+  proj_name = File.basename Dir.pwd
   symlink = File.join ENV["HOME"], ".local/bin/#{proj_name}"
   dir = File.join ENV["HOME"], ".local/bin"
   unless File.exist? symlink
