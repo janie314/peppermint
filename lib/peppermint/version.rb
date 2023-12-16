@@ -1,4 +1,4 @@
 module Peppermint
   GEM_NAME = File.basename(__dir__)
-  VERSION = "0.1.5"
+  VERSION = "0.1.6"
 end
