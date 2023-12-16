@@ -20,10 +20,10 @@ task :install_local do
   proj_name = File.basename Dir.pwd
   symlink = File.join ENV["HOME"], ".local/bin/#{proj_name}"
   dir = File.join ENV["HOME"], ".local/bin"
-  unless File.exist? symlink
+  if File.exist? symlink
+    puts "symlink #{symlink} already seems to exist. doing nothing"
+  else
     sh "mkdir", "-p", dir
     sh "ln", "-s", (File.join Dir.pwd, "bin", "#{proj_name}.rb"), symlink
-  else 
-    puts "symlink #{symlink} already seems to exist. doing nothing"
   end
 end

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    peppermint (0.1.4)
+    peppermint (0.1.5)
       pry-byebug
       rake (~> 13.0)
       rdoc

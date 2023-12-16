@@ -35,7 +35,7 @@ end
 
 desc "update those devel config files...."
 task :update_devel_config do
-  [".rubocop.yml", ".standard.yml", ".rspec", ".ruby-version"].each do |filename|
+  [".solargraph.yml", ".rubocop.yml", ".standard.yml", ".rspec", ".ruby-version"].each do |filename|
     FileUtils.cp (File.expand_path File.join __dir__, "..", "..", "..", filename), Dir.pwd
   end
 end
