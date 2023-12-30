@@ -1,50 +1,29 @@
-# peppermint
+# Peppermint
 
 _"A gem of a dev environment."_
 
 # Installation
 
-1. Put this in your `Gemfile`:
+1. Install [Ruby](https://www.ruby-lang.org/). We recommend using
+   [rbenv](https://github.com/rbenv/rbenv) to do so.
 
-```ruby
-group :development do
-  gem "peppermint", git: "https://github.com/janie314/peppermint"
-end
+2. Add Peppermint to your project repository!
+
+```shell
+bundle init
+bundle add peppermint --group development
+bundle exec rake peppermint:add_lang
 ```
 
-2. Run:
+# Update your Peppermint dev environment.
 
-```bash
-bundle
-```
-
-3. Put one of the following in your `Rakefile` as appropriate.
-
-```ruby
-require "peppermint/rake/ruby"
-```
-
-or
-
-```ruby
-require "peppermint/rake/rust"
-```
-
-4. Pull down config files.
-
-```bash
-bundle exec rake update_devel_config
-```
-
-# Update
-
-```bash
+```shell
 bundle update peppermint
-bundle exec rake update_devel_config
+bundle exec rake peppermint:update
 ```
 
 # Usage
 
-```bash
-bundle exec rake --tasks
+```shell
+bundle exec rake -T
 ```

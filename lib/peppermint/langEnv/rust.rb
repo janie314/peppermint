@@ -3,14 +3,16 @@ require "yard"
 require_relative "gwenGPT"
 
 module Peppermint
-  class Ruby < LangEnv
+  class Rust < LangEnv
     # see documentation for corresponding superclass method
     def initialize
       super.initialize
       RSpec::Core::RakeTask.new(:spec)
+
       RuboCop::RakeTask.new do |t|
         t.requires << "rubocop-rake"
       end
+
       YARD::Rake::YardocTask.new do |t|
         t.files = ["lib/**/*.rb"]
         t.options = ["--any", "--extra", "--opts"]

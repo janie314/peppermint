@@ -32,6 +32,6 @@ task deps: :deno_install do
 end
 
 desc "format this repo"
-task fmt: [:deps, :"rubocop:autocorrect_all", :deno_fmt] do
+task fmt: [:deps, :deno_fmt] do
   sh "cargo fmt"
 end
