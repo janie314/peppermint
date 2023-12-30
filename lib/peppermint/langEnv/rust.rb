@@ -7,17 +7,6 @@ module Peppermint
     # see documentation for corresponding superclass method
     def initialize
       super.initialize
-      RSpec::Core::RakeTask.new(:spec)
-
-      RuboCop::RakeTask.new do |t|
-        t.requires << "rubocop-rake"
-      end
-
-      YARD::Rake::YardocTask.new do |t|
-        t.files = ["lib/**/*.rb"]
-        t.options = ["--any", "--extra", "--opts"]
-        t.stats_options = ["--list-undoc"]
-      end
     end
 
     # see documentation for corresponding superclass method
@@ -28,8 +17,8 @@ module Peppermint
 
     # TODO copy to gitroot, not pwd
     # see documentation for corresponding superclass method
-    def cp_files
-      super.cp_files
+    def install_dev_config
+      super.install_dev_config
       [".solargraph.yml", ".rubocop.yml", ".standard.yml", ".rspec",
         ".ruby-version"].each do |filename|
         FileUtils.cp (File.expand_path File.join __dir__, "..", "..", "..", filename), Dir.pwd

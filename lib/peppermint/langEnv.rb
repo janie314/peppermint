@@ -9,7 +9,7 @@ module Peppermint
     end
 
     # copy standard dev files for this language into a git repo
-    def cp_files
+    def install_dev_config
     end
 
     # format a project repostiory using language-specific tools

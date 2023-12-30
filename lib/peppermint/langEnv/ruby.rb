@@ -1,12 +1,17 @@
 require "rspec/core/rake_task"
 require "yard"
 require_relative "gwenGPT"
+require_relative "../git"
 
 module Peppermint
   class Ruby < LangEnv
     # see documentation for corresponding superclass method
     def initialize
       super.initialize
+    end
+
+    # see documentation for corresponding superclass method
+    def add_rake_tasks
       RSpec::Core::RakeTask.new(:spec)
       RuboCop::RakeTask.new do |t|
         t.requires << "rubocop-rake"
@@ -19,15 +24,24 @@ module Peppermint
     end
 
     # see documentation for corresponding superclass method
+    def install_dev_dependencies
+      super.install_dev_dependencies
+      ["pry-byebug", "rake", "rdoc", "rspec", "rubocop", "rubocop-rake", "rubocop-rspec",
+        "solargraph", "standard", "yard"].each do |gem|
+        system("bundle", "add", gem, "--group", "development")
+      end
+    end
+
+    # see documentation for corresponding superclass method
     def install_lang
       super.install_lang
-      res = system("git", "clone", "https://github.com/rbenv/rbenv.git",
+      res = Git.clone_repo("https://github.com/rbenv/rbenv.git",
         File.join(ENV["HOME"], ".rbenv"))
       if !res
         puts "problem..."
         return
       end
-      res = system("git", "clone", "https://github.com/rbenv/ruby-build.git",
+      res = Git.clone_repo("https://github.com/rbenv/ruby-build.git",
         File.join(ENV["HOME"], ".rbenv", "plugins", "ruby-build"))
       if !res
         puts "problem..."
@@ -40,8 +54,8 @@ module Peppermint
 
     # TODO copy to gitroot, not pwd
     # see documentation for corresponding superclass method
-    def cp_files
-      super.cp_files
+    def install_dev_config
+      super.install_dev_config
       [".solargraph.yml", ".rubocop.yml", ".standard.yml", ".rspec",
         ".ruby-version"].each do |filename|
         FileUtils.cp (File.expand_path File.join __dir__, "..", "..", "..", filename), Dir.pwd

@@ -4,7 +4,7 @@ module Peppermint
       system "command -v deno || curl -fsSL https://deno.land/x/install/install.sh | sh"
     end
 
-    def cp_files
+    def install_dev_config
       # TODO copy to gitroot, not pwd
     end
 
