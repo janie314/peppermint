@@ -14,11 +14,11 @@ Gem::Specification.new do |spec|
   spec.authors = ["'j'"]
   spec.email = ["'pub@janie.page'"]
   spec.summary = "A Gem of a dev environment"
-  spec.description = ""
   spec.homepage = "https://github.com/janie314/peppermint"
-  spec.required_ruby_version = ">= 3.2.2"
   spec.metadata["homepage_uri"] = spec.homepage
 
+  # dependencies
+  spec.required_ruby_version = ">= 3.2.2"
   spec.add_dependency "toml-rb"
 
   ### BEGIN: DO NOT EDIT ###
