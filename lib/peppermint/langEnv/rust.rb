@@ -23,21 +23,7 @@ module Peppermint
     # see documentation for corresponding superclass method
     def install_lang
       super.install_lang
-      res = system("git", "clone", "https://github.com/rbenv/rbenv.git",
-        File.join(ENV["HOME"], ".rbenv"))
-      if !res
-        puts "problem..."
-        return
-      end
-      res = system("git", "clone", "https://github.com/rbenv/ruby-build.git",
-        File.join(ENV["HOME"], ".rbenv", "plugins", "ruby-build"))
-      if !res
-        puts "problem..."
-        return
-      end
-      puts "Now put this in your bashrc:\n", <<~BLOCK
-        eval "$(~/.rbenv/bin/rbenv init - bash)"
-      BLOCK
+      system "command -v cargo || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"
     end
 
     # TODO copy to gitroot, not pwd

@@ -11,5 +11,9 @@ module Peppermint
     # copy standard dev files for this language into a git repo
     def cp_files
     end
+
+    # format a project repostiory using language-specific tools
+    def fmt
+    end
   end
 end

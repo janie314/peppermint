@@ -12,18 +12,18 @@ _"A gem of a dev environment."_
 ```shell
 bundle init
 bundle add peppermint --group development
-bundle exec rake peppermint:add_lang
+bundle exec peppermint init
 ```
 
 # Update your Peppermint dev environment.
 
 ```shell
 bundle update peppermint
-bundle exec rake peppermint:update
+bundle exec peppermint update
 ```
 
 # Usage
 
 ```shell
-bundle exec rake -T
+bundle exec peppermint -h
 ```
