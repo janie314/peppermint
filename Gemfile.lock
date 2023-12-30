@@ -1,18 +1,8 @@
 PATH
   remote: .
   specs:
-    peppermint (0.1.6)
-      pry-byebug
-      rake (~> 13.0)
-      rdoc
-      rspec
-      rubocop
-      rubocop-rake
-      rubocop-rspec
-      solargraph
-      standard (~> 1.3)
+    peppermint (0.2.0)
       toml-rb
-      yard
 
 GEM
   remote: https://rubygems.org/
@@ -139,16 +129,16 @@ PLATFORMS
 
 DEPENDENCIES
   peppermint!
-  pry-byebug
-  rake (~> 13.0)
-  rdoc
-  rspec
-  rubocop
-  rubocop-rake
-  rubocop-rspec
-  solargraph
-  standard (~> 1.3)
-  yard
+  pry-byebug (~> 3.10)
+  rake (~> 13.1)
+  rdoc (~> 6.6)
+  rspec (~> 3.12)
+  rubocop (~> 1.57)
+  rubocop-rake (~> 0.6.0)
+  rubocop-rspec (~> 2.25)
+  solargraph (~> 0.50.0)
+  standard (~> 1.32)
+  yard (~> 0.9.34)
 
 BUNDLED WITH
    2.4.19
